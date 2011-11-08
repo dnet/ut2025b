@@ -28,16 +28,16 @@
 
 from __future__ import with_statement, division
 from PIL import Image
-import sys
+import sys, os
 
 if len(sys.argv) < 3:
-    print >>sys.stderr, 'Usage: {0} <input.bin> <output.png>'
+    print >>sys.stderr, 'Usage: {0} <input.bin> <output.png> [colormaps/map.txt]'
     sys.exit(1)
 
-#VALUEMAP = lambda x: int(x * 255 / 15)
-#COLORMAP = [(VALUEMAP(x), VALUEMAP(x), VALUEMAP(x)) for x in xrange(16)]
-COLORMAP = [(0, 0, 0) for _ in xrange(15)] + [(255, 255, 255)]
-COLORMAP.reverse()
+colormap_fn = (os.path.join('colormaps', 'monochrome.txt')
+        if len(sys.argv) < 4 else sys.argv[3])
+with file(colormap_fn, 'r') as colormap_file:
+    COLORMAP = [tuple(int(i) for i in row.split(',')) for row in colormap_file]
 
 x, y = 0, 0
 WIDTH, HEIGHT = 320, 240

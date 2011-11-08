@@ -13,10 +13,15 @@ scope is connected to the PC.
 
 If the exit value is 0, and no output is printed on stderr, the binary
 screenshot is ready in the `foo.bin` file. It can be converted to PNG by
-issuing the following command, which currently uses the color scheme of
-monochrome devices.
+issuing the following command.
 
 	python pd2png.py foo.bin foo.png
+
+An optional third parameter can be used to specify a colormap, which transforms
+the 4-bit image to RGB values. The default is monochrome, but the format is
+straightforward enought for everyone to create new and better ones. A colormap
+file must contain at least 16 lines, each containing three numbers (red, green,
+and blue values 0-255) separated by comma.
 
 License
 -------
