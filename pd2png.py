@@ -39,8 +39,6 @@ if len(sys.argv) < 3:
 COLORMAP = [(0, 0, 0) for _ in xrange(15)] + [(255, 255, 255)]
 COLORMAP.reverse()
 
-#dev = usb.core.find(idVendor=0x5656, idProduct=0x0832)
-
 x, y = 0, 0
 WIDTH, HEIGHT = 320, 240
 
