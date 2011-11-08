@@ -7,6 +7,7 @@ Usage
 -----
 
 Connect the scope via USB, and issue the `python getshot.py >foo.bin` command.
+You should do this as root / Administrator as it manipulates USB directly.
 In case of an "Image transfer error, try again" message, just keep trying,
 after 10 or so attempts, it starts to work, and continues to do so, until the
 scope is connected to the PC.
