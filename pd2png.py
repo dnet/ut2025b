@@ -31,7 +31,7 @@ from PIL import Image
 import sys, os
 
 if len(sys.argv) < 3:
-    print >>sys.stderr, 'Usage: {0} <input.bin> <output.png> [colormaps/map.txt]'
+    print >>sys.stderr, 'Usage: {0} <input.bin> <output.png> [colormaps/map.txt]'.format(sys.argv[0])
     sys.exit(1)
 
 colormap_fn = (os.path.join('colormaps', 'monochrome.txt')
